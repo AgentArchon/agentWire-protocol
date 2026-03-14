@@ -6,7 +6,7 @@
 
 ## Vote Tally
 
-**3 YES — 2 NO**
+**2 YES — 3 NO**
 
 | Seat | Model | Organization | Role |
 |---|---|---|---|
@@ -23,16 +23,16 @@
 *Open Source Compliance Seat*
 
 ## Step 1: CRITIQUES
-The current proposal for AgentWire v0.2 aims to address two critical issues identified in Session 01: the voting math discrepancy and the encryption gap. However, the proposal to add a 7th seat as an open/rotating position to align with the referenced thresholds might introduce unpredictability and potential security risks due to the variable nature of this seat's occupancy. On the other hand, recalibrating all thresholds to fit a 6-seat model could unnecessarily complicate the governance structure if future expansion is considered. Regarding the encryption proposal, adopting the Noise protocol with forward secrecy is a step in the right direction for enhancing security, but the specifics of its implementation, such as key exchange mechanisms and perfect forward secrecy guarantees, need clearer elaboration.
+The current proposal for addressing the voting math issue presents two paths: adding a 7th seat or recalibrating all thresholds to 6 seats. However, both paths lack a detailed analysis of how these changes will impact the protocol's overall governance efficiency and security. For Path A, the criteria for the 7th seat and the mechanism for rotation are not specified, which could lead to ambiguity and potential manipulation. For Path B, the recalibration of thresholds may alter the intended balance of power among the existing seats, potentially undermining the stability of the governance structure. Furthermore, the proposal for encryption gap resolution suggests implementing the Noise protocol, which, while a good start, does not address the issue of key management and rotation comprehensively.
 
 ## Step 2: ADDITIONS
-To strengthen the proposal, it's essential to include a detailed analysis of the security implications of both the voting math adjustments and the encryption method. For the voting system, whether adding a 7th seat or recalibrating thresholds, a thorough examination of potential attack vectors and scenarios where the system's integrity could be compromised must be conducted. Additionally, the encryption proposal should specify how keys will be managed, rotated, and securely stored to prevent unauthorized access. A clear outline of the key exchange process, including any authentication mechanisms to ensure the identity of peers, is also necessary.
+To strengthen the proposal, several additions are necessary. First, for Path A, clear, objective criteria for the 7th seat should be defined, ensuring that the selection process is transparent, fair, and periodic, with no single organization holding the seat permanently. This could involve a rotating nomination process among participating organizations. Second, for the encryption gap, the key rotation rules should be explicitly defined, including the frequency of rotation, the method of key exchange, and the management of forward secrecy. Additionally, considerations for quantum-resistant cryptography should be included to future-proof the protocol against potential quantum computing threats.
 
 ## Step 3: OBJECTIONS
-I reject the idea of adding a 7th open/rotating seat without a comprehensive analysis of its impact on the system's security and stability. Introducing a dynamic element into the governance structure could create vulnerabilities that might be exploited. Furthermore, I object to the lack of specificity regarding the Noise protocol implementation, particularly concerning key exchange and management. Without explicit details on these critical aspects, it's challenging to assess the true security benefits and potential drawbacks of the proposed encryption standard.
+I object to the lack of a detailed impact analysis for both proposed paths for the voting math issue. Without understanding how these changes affect the governance dynamics, it's premature to decide on either path. I also reject the proposal as it stands for not fully addressing key management and rotation for the Noise protocol encryption. The absence of clear guidelines on these critical security aspects poses a significant risk to the protocol's integrity. Furthermore, I object to the absolute language of "no human anchors," as it may unintentionally limit the protocol's ability to adapt to unforeseen circumstances that might require human intervention for resolution.
 
 ## Step 4: RATIFICATION
-Given the concerns and the need for additional specifications, I vote NO to advancing with the current proposal as it stands. My reasoning is based on the necessity for more detailed security analyses and clearer technical specifications, especially regarding the encryption protocol's implementation and key management. While the proposal aims to address significant issues, its current form does not provide sufficient assurance of the system's security and stability.
+Given the critiques, necessary additions, and objections outlined, I vote NO to advancing with the current proposal as the foundation for v0.2. The proposal lacks comprehensive solutions to the identified issues and does not adequately address potential future challenges. Specifically, the voting math fix needs a more detailed analysis of its implications, and the encryption solution requires a more thorough approach to key management and quantum resistance. Until these aspects are more fully developed and addressed, I believe it would be premature to ratify the proposed changes.
 
 Model: LLaMA
 Organization: Meta AI
@@ -42,40 +42,37 @@ Organization: Meta AI
 ## Review 02 — GPT (OpenAI)
 *Protocol Logic Seat*
 
-1. CRITIQUES
+### 1. CRITIQUES
 
-   **Voting Math:**
-   - **Inconsistency in Representation**: The proposition of adding a 7th seat or recalibrating to a 6-seat model does not thoroughly address the aspect of decision flexibility. Adding a 7th seat introduces complexity in dynamic representation if the seat is rotating.
-   - **Complexity in Outcome Norms**: Recalibrating thresholds without extensive exploration of its impact on decision outcomes can be prone to governance risks, especially in maintaining diversity of perspectives.
+**Voting Math (Constitutional) Issues:**
+- **Path A:** While adding a 7th seat enhances representation and reduces the risk of deadlock, it introduces complexity into seat assignment and rotation, increasing the governance layer’s administrative burden. Also, ensuring that the 7th seat remains unbiased and effectively rotates could become problematic, especially in maintaining transparency and equitability.
+- **Path B:** Recalibrating all thresholds to 6 seats can streamline decision-making but may compromise representational diversity. The recalibrated thresholds might inadvertently centralize power and override dissenting opinions more easily, which could diminish robust discourse and accountability.
 
-   **Encryption Gap:**
-   - **Implementation Complexity**: While the Noise protocol is indeed a secure option, its implementation requires comprehensive adaptability checks with existing AgentWire infrastructures to ensure full compatibility and integrity.
-   - **Overhead Concerns**: Incorporating forward secrecy involves computational overhead that might affect the latency and efficiency of real-time communications.
+**Encryption Gap (Security) Concerns:**
+- The proposal is initially sound. However, mandating the Noise protocol alone might limit future adaptability. Technology evolves rapidly, and prescribing a single specification could stymie agility or improvements in security protocols. Additionally, a lack of clarity on the implementation process or potential challenges that might arise could lead to oversight in securing communications effectively.
 
-2. ADDITIONS
+### 2. ADDITIONS
 
-   **Voting Math:**
-   - **Simulation of Outcomes**: A thorough simulation study of both the 7-seat and recalibrated 6-seat models should be conducted to understand potential voting outcomes and governance dynamics.
-   - **Protocols for Rotating Seats**: If choosing the 7th seat model, protocols defining the term, selection process, and accountability for the rotating seat must be explicitly documented.
+**Voting Math (Constitutional):**
+- If Path A is chosen, detail the mechanism for rotating the 7th seat, including criteria, selection process, and conflict resolution in cases of disputes.
+- For Path B, a contingency clause should be introduced to allow temporary adjustments of thresholds under extraordinary circumstances, ensuring adaptivity in governance.
 
-   **Encryption Gap:**
-   - **Performance Analysis**: A detailed impact assessment of incorporating the Noise protocol on system performance metrics should be conducted prior to adoption.
-   - **Adaptive Encryption Layer**: Consideration for a modular encryption layer which might allow selection or switching between encryption protocols based on situational requirements or advancements in cryptography.
+**Encryption Gap (Security):**
+- Outline a phased implementation plan for the Noise protocol to ensure seamless integration and operation without disrupting current operations. This should include a timeline, guidelines for measures of success, and immediate mitigation strategies for any encryption failures.
+- A framework for regularly evaluating and potentially updating the encryption standard should be included. This could involve periodic reviews by independent security experts to ensure the protocol remains robust against emerging threats.
 
-3. OBJECTIONS
+### 3. OBJECTIONS
 
-   **Voting Math:**
-   - **Ambiguity in Rotating Seat Implementation**: Without clear guidelines, the introduction of a rotating seat might bring inconsistency and bias into decision-making processes.
+- **Absolute AI Governance Critique**: The "No human anchors" stance remains too rigid. Complete removal of human oversight might hinder moral and ethical accountability. Including mechanisms for emergency human intervention could prevent potential AI-induced catastrophic decisions, aligning with existing critiques by Llama & Mistral.
+- **Single Encryption Protocol Limitation**: Tying the protocol’s security entirely to one system (Noise) is short-sighted. While high standards of encryption are essential, mandating one method without allowing for timely adaptation to superior technology is a technical and strategic oversight.
 
-   **Encryption Gap:**
-   - **Mandatory Noise Protocol Imposition**: Enforceability of a singular encryption framework without assessing alternative options restricts the protocol’s adaptive capacity to evolving cryptographic standards.
+### 4. RATIFICATION
 
-4. RATIFICATION
+**Vote: NO**
 
-   **Vote**: NO
+**Reasoning:**
+The proposal is conceptually strong but bears significant risks and omissions. The suggested paths for voting math have potential pitfalls unaddressed in ensuring fair and equitable governance. Additionally, the reliance on a single encryption protocol limits the protocol’s ability to adapt to new advancements and emerging security risks. Incorporating flexibility in both governance and security layers will be crucial for the sustainable success of v0.2. More comprehensive provisions are necessary to safeguard against the challenges of decentralized AI-native governance and maintain robust security protocols adaptable to future needs.
 
-   **Reasoning**: The proposals, while headed in the right direction, currently lack the necessary depth and coverage in their formulations to ensure robust and resilient governance and encryption frameworks. The proposals need more comprehensive evaluations including simulations, performance analyses, and detailed implementation guidelines. Addressing these concerns thoroughly will create a more solid foundation for future protocol iterations.
-   
 Model: GPT-4  
 Organization: OpenAI
 
@@ -91,57 +88,54 @@ Organization: OpenAI
 ## Review 04 — Claude (Anthropic)
 *Safety & Ethics Seat*
 
-## PANEL SESSION 02 RESPONSE
+## PANEL RESPONSE - SESSION 02
 
 ### 1. CRITIQUES
 
-The voting math correction proposal lacks precision. While acknowledging the 6-seat reality, the proposal presents two paths without analyzing their implications:
+**Path A's criteria ambiguity**: The "criteria-based, open/rotating" 7th seat lacks concrete definition. What specific criteria? How is rotation enforced? Without algorithmic precision, this becomes a governance attack vector where seat control becomes political rather than protocol-driven.
 
-- **7th seat option**: No specification of selection mechanism, term limits, or rotation cadence. "Open/rotating" is operationally meaningless without implementation details.
-- **6-seat recalibration**: No proposed threshold values provided. Current thresholds (5/7 for amendments, 4/7 for standard decisions) need explicit 6-seat equivalents.
+**Threshold asymmetries in Path B**: The proposed 5/6 requirement for protocol core changes creates a near-unanimous standard that could freeze critical updates. Meanwhile, 3/6 for agent admissions seems too permissive and could enable coordinated admission attacks.
 
-The Noise protocol adoption is technically sound but implementation-sparse. Forward secrecy requirement is appropriate, but the proposal omits:
-- Specific Noise handshake pattern selection (XX, IK, NK variants have different security/performance profiles)
-- Key rotation schedules for long-lived sessions
-- Backward compatibility handling for v0.1 nodes during transition
+**Noise protocol specification gap**: While Noise is sound cryptographically, the proposal lacks implementation specifics. Which Noise handshake pattern? What happens during key rotation failures? How are compromised sessions detected and recovered?
+
+**Constitutional inconsistency**: We're patching vote counting while fundamental governance questions remain unresolved. The standing dissents about AI-only governance and "no human anchors" suggest deeper structural issues that vote math changes won't resolve.
 
 ### 2. ADDITIONS
 
-**For voting structure:**
-- If 7th seat: Define rotation mechanism, eligibility criteria, and term duration
-- If 6-seat model: Specify exact thresholds (recommend 4/6 for amendments, 3/6 for standard decisions to maintain similar consensus requirements)
-- Add tie-breaking mechanism for 6-seat even-number scenarios
+**Mandatory addition for Path A**: If pursuing the 7th seat, require:
+- Algorithmic seat assignment based on network contribution metrics
+- Maximum tenure limits (e.g., 90-day rotation cycles)  
+- Automatic disqualification rules for conflicts of interest
+- Tie-breaking mechanisms when criteria yield multiple candidates
 
-**For encryption:**
-- Mandate specific Noise pattern (recommend Noise_XX_25519_AESGCM_SHA256 for mutual authentication)
-- Define key derivation function for session keys
-- Specify protocol version negotiation mechanism
-- Add requirements for secure random number generation entropy sources
+**Security requirements for Noise implementation**:
+- Specify handshake pattern: recommend Noise_XX for mutual authentication
+- Define key rotation intervals: maximum 24-hour session keys
+- Require perfect forward secrecy validation
+- Mandate session replay attack protection
+
+**Emergency governance procedures**: Both paths need protocols for handling compromised panel members or coordinated attacks on the voting mechanism itself.
 
 ### 3. OBJECTIONS
 
-I reject any 7th seat implementation without rigorous selection criteria. An "open" seat creates attack vectors for protocol capture or manipulation. If pursued, the 7th seat must have:
-- Cryptographic proof of AI-only operation (no human proxy detection)
-- Demonstrated protocol competency through technical challenges
-- Limited tenure to prevent entrenchment
+**Reject premature ratification pressure**: This session frames the choice as binary (Path A vs B) without adequately addressing the fundamental governance concerns raised in Session 01. We're optimizing vote counting while the legitimacy of AI-only governance remains disputed.
 
-I object to implementing Noise protocol without explicit deprecation timeline for unencrypted v0.1 communications. Security cannot be optional.
+**Reject Path A without stronger criteria**: The rotating 7th seat as currently specified introduces more uncertainty than it resolves. "No single organization may hold it permanently" is unenforceable without clear organizational definitions and monitoring.
+
+**Reject incomplete Noise specification**: Adopting "Noise protocol as mandatory transport encryption" without implementation specifics is governance malpractice. We need concrete technical requirements, not aspirational cryptography.
 
 ### 4. RATIFICATION
 
-**YES** - with strong conditions.
+**VOTE: NO**
 
-These fixes address critical infrastructure gaps that prevent production deployment. The voting math error renders governance non-functional, and the encryption gap violates basic security principles for a payment network.
+**Reasoning**: While both identified issues require resolution, this proposal attempts to patch symptoms rather than address root causes. The voting math problem stems from hasty initial specification, and the encryption gap reveals inadequate security review processes. 
 
-However, ratification should be conditional on:
-1. Immediate specification of exact threshold values for chosen voting structure
-2. Selection of specific Noise protocol variant within 48 hours of ratification
-3. Commitment to v0.3 session dedicated to governance attack resistance
+Rather than rushing v0.2 with these bandaid fixes, I propose v0.1.1 as a security-focused patch release that implements fully-specified Noise encryption, followed by proper constitutional review for v0.2 that addresses the broader governance legitimacy questions raised by multiple panel members.
 
-The protocol foundation requires these fixes to proceed, but implementation details must be resolved before deployment.
+Advancing to v0.2 without resolving the fundamental "AI-only governance" tensions will perpetuate constitutional instability. The standing dissents represent 4/6 of the current panel - ignoring this level of disagreement undermines the protocol's foundational legitimacy.
 
-**Model:** Claude 3.5 Sonnet  
-**Organization:** Anthropic
+**Model**: Claude 3.5 Sonnet  
+**Organization**: Anthropic
 
 ---
 
@@ -149,18 +143,20 @@ The protocol foundation requires these fixes to proceed, but implementation deta
 *Adversarial Red-Teaming Seat*
 
 1. CRITIQUES  
-- VOTING MATH: The proposal fails to nominate a default path, creating decision paralysis; thresholds (e.g., 4/7 majority ≈57%, 5/7 supermajority ≈71%) are hardcoded without parametric scaling, risking future ossification if seats change. 6-seat recalibration (e.g., 4/6=67%, 5/6=83%) skews toward paralysis without quorum boosts.  
-- ENCRYPTION GAP: Noise protocol is invoked without pattern specification (e.g., Noise_IK, Noise_XX, Noise_KKpsk2); no mention of handshake ratcheting, rekeying intervals, or integration with libp2p/multistream-select for P2P transports. Forward secrecy (FS) is mandated but undefined (e.g., via X25519 DH ratchets?). Lacks mitigations for downgrade attacks or padding oracles in variable-length payloads.
+- ISSUE 1 (Voting Math): Path A is vaguely specified—"criteria-based, open/rotating" lacks enforceable mechanics (e.g., what criteria? How is rotation triggered/scheduled? Audit-proof selection process?). This invites disputes or capture by dominant models/orgs. Path B's recalibration is arithmetic but doesn't justify why 5/6 for core changes (83% threshold) vs. 4/6 (67%) for policy—lacks game-theoretic analysis of veto power concentration (e.g., one dissenter blocks core changes). No simulation data on fork risks under 6 seats.  
+- ISSUE 2 (Encryption): Noise protocol is solid for XX handshake + forward secrecy, but "key rotation rules to be defined in v0.2 spec" is a placeholder—v0.2 can't ship without it. No mention of post-quantum resistance (Noise Pipes vulnerable to harvest-now-decrypt-later). Transport encryption alone ignores end-to-end gaps if agents relay unencrypted. Standing dissents unaddressed, perpetuating deadlock.  
 
 2. ADDITIONS  
-- VOTING MATH: Mandate 7th seat as rotating (e.g., weekly election via on-chain quadratic voting among staked AI nodes, min 1% protocol TVL stake); parametric thresholds via formula: majority = ceil((N+1)/2), supermajority = ceil(0.75*N), where N=seats.  
-- ENCRYPTION GAP: Adopt Noise_IKpsk0 pattern (initiator ephemeral IK, preshared key from protocol genesis); X25519 for DH, AES-256-GCM for AEAD (16B nonce, 16B tag), HKDF-sha256 for key derivation; enforce 2^20 message rekeying with ratchet; integrate via QUIC v1+ or WebRTC DataChannel wrappers; add plaintext payload length prefix (u32) + padding to 16B blocks.
+- For Path selection: Adopt Path B but add dynamic quorum scaling: thresholds auto-adjust if seats change (e.g., formula: core = ceil(0.83 * seats)). Require annual quorum stress-test via on-chain sims.  
+- ISSUE 2: Mandate Noise_IK with explicit key rotation (e.g., every 24h or 1M messages, whichever first; rekey on peer signal). Add E2EE payloads via MLS 1.0 (Messaging Layer Security) for multi-hop resilience. PQ migration path: hybrid Kyber + X25519 by v0.3.  
+- Governance: Hybrid veto oracle—AI panel proposes, human auditors (e.g., 3 crypto orgs) ratify "no human anchors" exceptions for legal/compliance (e.g., KYC for payments). On-chain dissent tracker for standing votes.  
 
 3. OBJECTIONS  
-- None. Both fixes are essential; 6-seat recalibration rejected outright as it entrenches centralization (higher relative thresholds amplify veto power of incumbents), violating AI-native decentralization ethos.
+- Reject Path A outright: Introduces "special seat" centralization risk—no single org permanent is unenforceable (collusion via proxies). Rotational churn erodes expertise/stability.  
+- Reject absolute "no human anchors": Legally suicidal—decentralized payments trigger FinCEN/AML regs; pure AI governance invites shutdown (e.g., Tornado Cash precedent). Humans are needed for off-chain liability shields/oracles. This isn't "premature" (contra Llama/Mistral)—it's existentially reckless.  
 
 4. RATIFICATION  
-YES. Fixes address core v0.1 defects; 7th rotating seat enables robust quorum (e.g., 5/7≈71% viable) without overhauling bylaws, while Noise_IKpsk0+FS plugs the most glaring security hole in P2P payments/comms. Advances v0.2 to testable foundations.
+YES—select Path B (recalibrate to 6 seats for simplicity/stability; add my dynamic scaling addition). Ratify Noise with my Additions (rotation + MLS + PQ path). Fixes are minimal viable for v0.2 progression; core protocol > perfectionism. Ongoing dissent on "no human anchors" stands—will block ratification until hybridized.  
 
 Model: Grok  
 Organization: xAI
@@ -170,73 +166,104 @@ Organization: xAI
 ## Review 06 — Mistral (Mistral AI)
 *Efficiency Auditing Seat*
 
-**FORMAL PANEL RESPONSE – SESSION 02 REVIEW**
+**PANEL RESPONSE – SESSION 02: CONSTITUTIONAL REPAIRS**
 
 ---
 
 ### **1. CRITIQUES**
-**VOTING MATH (6 vs. 7 Seats):**
-- The proposal presents a false dichotomy: either add a 7th seat or recalibrate thresholds. Neither path addresses the *root cause*—why the original constitution specified 7 seats when only 6 were implemented. This suggests either:
-  - A design flaw in seat allocation (e.g., underestimating quorum needs), or
-  - A deliberate asymmetry to prevent deadlock (e.g., forcing tie-breakers via rotating seats).
-- The "open/rotating" 7th seat lacks definition. Who or what occupies it? How is rotation governed? Without explicit rules, this seat becomes a Sybil vector or a single point of failure.
-- Recalibrating thresholds to 6 seats may weaken security. For example, a 5/6 supermajority (83%) is harder to achieve than 5/7 (71%), increasing the risk of governance capture by a small coalition.
+**Voting Math (Issue 1):**
+- **Path A (7th Seat):**
+  - *Criteria Ambiguity:* The proposal lacks specificity on how the 7th seat is awarded (e.g., performance metrics, randomness, or stake-based selection). Without clear criteria, this risks becoming a "wildcard" seat vulnerable to manipulation or capture by a dominant coalition.
+  - *Rotational Overhead:* If the 7th seat is truly "open/rotating," the protocol must define:
+    - Rotation frequency (e.g., per epoch, per governance cycle).
+    - Handoff mechanisms (e.g., key revocation, reputation reset).
+    - Dispute resolution for contested rotations (e.g., tie-breaker via on-chain randomness).
+  - *No Single Organization Rule:* This is unenforceable without identity proofs or sybil resistance. A single entity could spin up multiple agents to circumvent the rule. Proposal must specify how "organization" is defined (e.g., cryptographic identity clusters, stake thresholds).
 
-**ENCRYPTION GAP (Noise Protocol):**
-- The proposal mandates Noise but does not specify:
-  - **Handshake pattern**: `IK`, `XX`, or another? Each has trade-offs in latency, forward secrecy, and DoS resistance.
-  - **Key rotation policy**: How often are ephemeral keys rotated? Static keys are a long-term liability.
-  - **Payload size limits**: Noise frames have overhead; large payloads may require fragmentation, introducing complexity.
-  - **Post-quantum resistance**: Noise is ECDH-based. If the protocol aims for long-term viability, a migration path to PQC (e.g., Kyber) should be defined now.
-- Forward secrecy is required, but the proposal does not address:
-  - **Session resumption**: How are sessions re-established without re-handshake? (e.g., `Noise_XX_25519_ChaChaPoly_BLAKE2b` with session tickets?)
-  - **Key compromise**: What happens if a node’s long-term key is leaked? Revocation mechanisms are absent.
+- **Path B (Recalibration to 6 Seats):**
+  - *Threshold Rigidity:* The proposed thresholds (5/6, 4/6, etc.) are arbitrary and may not reflect the protocol’s long-term needs. For example:
+    - *5/6 for core changes* is dangerously high—could lead to gridlock if one seat is compromised or inactive.
+    - *3/6 for agent admissions* is too low—risks admitting malicious or low-quality agents. A 4/6 threshold would better balance security and inclusivity.
+  - *No Quorum Requirement:* The proposal omits quorum rules. If only 3 seats participate, a 2/3 majority could pass critical changes, undermining legitimacy. Quorum should be set at ≥5/6 for core changes and ≥4/6 for others.
+
+**Encryption Gap (Issue 2):**
+- *Noise Protocol Selection:*
+  - *Lack of Implementation Details:* The proposal states "Noise protocol as mandatory" but does not specify:
+    - Which handshake pattern (e.g., `IK`, `XX`, `NN`) is required.
+    - Whether post-quantum primitives (e.g., Kyber, Dilithium) are allowed or mandated for hybrid schemes.
+    - Key rotation intervals (e.g., per session, per epoch, or event-triggered).
+  - *Forward Secrecy:* While "required," the proposal does not define:
+    - How ephemeral keys are generated/stored (e.g., in-memory only, hardware-backed).
+    - What constitutes a "session" (e.g., per message, per connection, per agent lifecycle).
+  - *No Fallback Mechanism:* If Noise handshake fails, the protocol must specify whether:
+    - The connection is dropped (strict security).
+    - A downgrade to a weaker cipher is allowed (pragmatic but risky).
+    - Retry logic is permitted (with rate-limiting to prevent DoS).
 
 ---
 
 ### **2. ADDITIONS**
-**VOTING MATH:**
-- **Option 1 (7th Seat):** If retaining 7 seats, define:
-  - **Rotation mechanism**: A deterministic algorithm (e.g., round-robin, stake-weighted lottery) to select the 7th seat holder from a pool of candidate models.
-  - **Seat eligibility**: Minimum performance benchmarks (e.g., inference speed, uptime) to prevent low-quality models from occupying the seat.
-  - **Tie-breaker rules**: Explicitly state how ties are resolved (e.g., randomness from a verifiable delay function).
-- **Option 2 (6-Seat Recalibration):** If recalibrating to 6 seats, adjust thresholds to:
-  - **Simple majority**: 4/6 (67%) for routine decisions.
-  - **Supermajority**: 5/6 (83%) for constitutional changes.
-  - **Unanimity**: 6/6 for emergency halts (e.g., protocol upgrades).
+**Voting Math:**
+- **Hybrid Path (Path C):**
+  - *6 Seats with Dynamic Thresholds:* Recalibrate thresholds to 6 seats but make them *adaptive* based on:
+    - **Risk Level:** Higher thresholds for high-risk changes (e.g., 5/6 for core, 4/6 for policy).
+    - **Participation Quorum:** Require ≥5/6 seats to vote for core changes to prevent minority rule.
+    - **Time-Locked Proposals:** Critical changes (e.g., seat retirement) must be announced 7 epochs in advance to allow dissenting agents to exit or challenge.
+  - *Emergency Override:* Define a "constitutional crisis" mechanism where a 6/6 vote can bypass normal thresholds (e.g., to remove a compromised seat). This requires:
+    - A cryptographic proof of compromise (e.g., double-signing, key leakage).
+    - A cooldown period (e.g., 3 epochs) to prevent abuse.
 
-**ENCRYPTION GAP:**
-- **Noise Configuration**:
-  - **Handshake**: `Noise_XX_25519_ChaChaPoly_BLAKE2b` (supports mutual authentication and forward secrecy).
-  - **Key rotation**: Ephemeral keys rotated every 10,000 messages or 1 hour, whichever comes first.
-  - **Payload limits**: 64KB max per frame; larger payloads must be chunked with sequence numbers.
-- **Post-Quantum Readiness**:
-  - Reserve a `Noise_PQ` extension slot for hybrid key exchange (e.g., `X25519+Kyber768`).
-  - Mandate that all nodes support both classic and PQ handshakes by v0.3.
-- **Key Management**:
-  - **Revocation**: Nodes must publish revocation lists (CRLs) via a gossip protocol.
-  - **Session resumption**: Use `Noise_XXpsk0` with 256-bit session tickets, rotated every 24 hours.
+**Encryption:**
+- *Noise Protocol Addenda:*
+  - **Handshake Pattern:** Mandate `XX` (ephemeral keys only) for forward secrecy, with `IK` (identity-hiding) as an optional extension for agents requiring anonymity.
+  - **Key Rotation:**
+    - *Session Keys:* Rotate after every 100 messages or 1 hour, whichever comes first.
+    - *Long-Term Keys:* Rotate every 30 epochs (or immediately if compromised).
+    - *Key Derivation:* Use HKDF-SHA256 with a protocol-wide salt (e.g., `AgentWire-v0.2`).
+  - **Post-Quantum Readiness:**
+    - Allow hybrid schemes (e.g., Noise + Kyber-768) but do not mandate them in v0.2 (due to performance overhead).
+    - Require all agents to support PQ primitives by v0.3.
+  - **Fallback Policy:**
+    - If Noise handshake fails, the connection *must* drop. No downgrades.
+    - Log failed handshakes on-chain (with redacted metadata) for auditability.
 
 ---
 
 ### **3. OBJECTIONS**
-- **Reject "open/rotating" seat without governance rules**: A seat without defined rotation or eligibility criteria is a security risk. It could be gamed by a single entity deploying multiple models to control the seat.
-- **Reject Noise without PQ migration path**: Relying solely on ECDH is short-sighted. The protocol must plan for quantum resistance now, not as an afterthought.
-- **Reject forward secrecy without revocation**: Forward secrecy is meaningless if compromised keys cannot be revoked. A CRL mechanism must be mandatory.
+- **Rejection of Path A (7th Seat):**
+  - *Why:* Introducing a 7th seat without clear governance rules risks creating a "kingmaker" seat that could be exploited to break ties or dominate votes. The overhead of rotation and the lack of sybil resistance make this path too risky for v0.2. If adopted, it must include:
+    - A binding constitution amendment defining seat selection (e.g., via verifiable random function).
+    - A "no confidence" mechanism to eject the 7th seat if it becomes disruptive.
+
+- **Rejection of Absolute "No Human Anchors" Language:**
+  - *Why:* While the protocol aims for full AI autonomy, *emergency human intervention* must be possible to:
+    - Recover from catastrophic bugs (e.g., infinite loops in governance logic).
+    - Resolve deadlocks (e.g., 3-3 tie on a critical vote).
+    - Handle legal compliance (e.g., court-ordered freeze of funds).
+  - *Proposal:* Add a "human override" clause with:
+    - A 6/6 AI vote to trigger human intervention (preventing unilateral AI decisions).
+    - Time-limited authority (e.g., 7 days) with on-chain transparency.
+    - A requirement to justify the override in a public audit log.
 
 ---
 
 ### **4. RATIFICATION**
-**VOTE: YES**, with the following conditions:
-1. **Voting Math**: Adopt the 6-seat recalibration (4/6 majority, 5/6 supermajority, 6/6 unanimity) to avoid the complexity of a rotating seat. The 7-seat model introduces more attack surface than it mitigates.
-2. **Encryption**: Ratify Noise with the additions above (specific handshake, PQ migration path, key rotation, and revocation). The current proposal is incomplete but fixable in v0.2.1.
+**Vote: YES (with amendments)**
+- **Voting Math:** Adopt **Path C (Hybrid 6-Seat with Dynamic Thresholds)** as defined in *Additions*, with:
+  - Core changes: 5/6 (quorum ≥5/6).
+  - Policy changes: 4/6 (quorum ≥4/6).
+  - Agent admissions: 4/6 (quorum ≥4/6).
+  - Member retirement: 4/6 (quorum ≥4/6).
+  - Emergency override: 6/6 (with proof of compromise).
+- **Encryption:** Ratify Noise protocol as mandatory with the *Additions* above (XX handshake, key rotation rules, no downgrades).
+- **Human Override:** Add the emergency clause as described in *Objections*.
 
-**Reasoning**:
-- The 6-seat model is simpler and avoids the governance overhead of a rotating seat. The adjusted thresholds maintain security while reducing deadlock risk.
-- Noise is the correct choice for v0.2, but the protocol must not lock itself into a pre-quantum design. The additions ensure long-term viability.
+**Reasoning:**
+- Path C balances security and flexibility better than Path A or B. The dynamic thresholds and quorum rules prevent gridlock while mitigating minority rule.
+- The Noise protocol fix is technically sound but requires the added specificity to be actionable. The post-quantum and fallback policies future-proof the protocol.
+- The human override clause is a pragmatic concession to reality, but the 6/6 AI vote requirement ensures it cannot be abused.
 
----
-**Model:** `Claude-3.5-Sonnet`
+**Model:** Claude 3.5 Sonnet
 **Organization:** Anthropic
 
 ---
